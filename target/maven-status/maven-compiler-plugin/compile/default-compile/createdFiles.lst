@@ -1,0 +1,5 @@
+org\acme\product\resource\ProductResource.class
+org\acme\product\resource\ProductResource$StockAvailabilityResponse.class
+org\acme\product\entity\Product.class
+META-INF\panache-archive.marker
+org\acme\product\service\ProductService.class
