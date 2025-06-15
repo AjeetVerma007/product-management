@@ -58,8 +58,8 @@ java -jar target/quarkus-app/quarkus-run.jar
 ## API Documentation
 
 Once the application is running, you can access:
-- OpenAPI specification: `http://localhost:8080/openapi`
-- Swagger UI: `http://localhost:8080/swagger-ui`
+- OpenAPI specification: `http://localhost:9000/openapi`
+- Swagger UI: `http://localhost:9000/swagger-ui`
 
 ## Testing the Application
 
@@ -97,7 +97,7 @@ The application includes integration tests that test the full API endpoints. Mak
 
 #### 2. Test Product Creation
 ```bash
-curl -X POST http://localhost:8080/api/products \
+curl -X POST http://localhost:9000/api/products \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Test Product",
@@ -109,27 +109,27 @@ curl -X POST http://localhost:8080/api/products \
 
 #### 3. Test Getting All Products
 ```bash
-curl -X GET http://localhost:8080/api/products
+curl -X GET http://localhost:9000/api/products
 ```
 
 #### 4. Test Getting Products Sorted by Price
 ```bash
-curl -X GET http://localhost:8080/api/products/sorted-by-price
+curl -X GET http://localhost:9000/api/products/sorted-by-price
 ```
 
 #### 5. Test Getting a Specific Product
 ```bash
-curl -X GET http://localhost:8080/api/products/1
+curl -X GET http://localhost:9000/api/products/1
 ```
 
 #### 6. Test Stock Availability
 ```bash
-curl -X GET http://localhost:8080/api/products/1/check-stock/10
+curl -X GET http://localhost:9000/api/products/1/check-stock/10
 ```
 
 #### 7. Test Product Update
 ```bash
-curl -X PUT http://localhost:8080/api/products/1 \
+curl -X PUT http://localhost:9000/api/products/1 \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Updated Product",
@@ -141,13 +141,13 @@ curl -X PUT http://localhost:8080/api/products/1 \
 
 #### 8. Test Product Deletion
 ```bash
-curl -X DELETE http://localhost:8080/api/products/1
+curl -X DELETE http://localhost:9000/api/products/1
 ```
 
 ### Testing with Swagger UI
 
 1. Start the application in development mode
-2. Open your browser and navigate to: `http://localhost:8080/swagger-ui`
+2. Open your browser and navigate to: `http://localhost:9000/swagger-ui`
 3. Use the interactive UI to test all API endpoints
 
 ### Test Data Setup
@@ -155,17 +155,17 @@ curl -X DELETE http://localhost:8080/api/products/1
 For comprehensive testing, you can create multiple products:
 ```bash
 # Product 1
-curl -X POST http://localhost:8080/api/products \
+curl -X POST http://localhost:9000/api/products \
   -H "Content-Type: application/json" \
   -d '{"name": "Laptop", "description": "Gaming laptop", "price": 1299.99, "quantity": 15}'
 
 # Product 2
-curl -X POST http://localhost:8080/api/products \
+curl -X POST http://localhost:9000/api/products \
   -H "Content-Type: application/json" \
   -d '{"name": "Mouse", "description": "Wireless mouse", "price": 29.99, "quantity": 100}'
 
 # Product 3
-curl -X POST http://localhost:8080/api/products \
+curl -X POST http://localhost:9000/api/products \
   -H "Content-Type: application/json" \
   -d '{"name": "Keyboard", "description": "Mechanical keyboard", "price": 89.99, "quantity": 50}'
 ```
@@ -377,7 +377,7 @@ curl -X POST http://localhost:8080/api/products \
 
 **Create Product:**
 ```bash
-curl -X POST http://localhost:8080/api/products \
+curl -X POST http://localhost:9000/api/products \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Gaming Laptop",
@@ -389,12 +389,12 @@ curl -X POST http://localhost:8080/api/products \
 
 **Get All Products:**
 ```bash
-curl -X GET http://localhost:8080/api/products
+curl -X GET http://localhost:9000/api/products
 ```
 
 **Update Product:**
 ```bash
-curl -X PUT http://localhost:8080/api/products/1 \
+curl -X PUT http://localhost:9000/api/products/1 \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Gaming Laptop Pro",
@@ -406,7 +406,7 @@ curl -X PUT http://localhost:8080/api/products/1 \
 
 **Check Stock:**
 ```bash
-curl -X GET http://localhost:8080/api/products/1/check-stock/10
+curl -X GET http://localhost:9000/api/products/1/check-stock/10
 ```
 
 ## Docker Support
